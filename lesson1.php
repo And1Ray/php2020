@@ -18,7 +18,7 @@ const IMAGES = 80;
 const FELTTIP_PEN = 23;
 const PENCIL = 40;
 
-echo $paints = IMAGES - (FELTTIP_PEN + PENCIL);
+echo IMAGES - (FELTTIP_PEN + PENCIL);
 echo '<br>';
 
 echo '<hr>';
@@ -26,13 +26,13 @@ echo '<hr>';
 //#3
 $second_age = 18;
 
-if ($second_age >= 18 && $second_age <= 65) {
+if ($second_age > 17 && $second_age < 66) {
     echo 'Вам еще работать и работать';
     echo '<br>';
 } elseif ($second_age > 65) {
     echo 'Вам пора на пенсию';
     echo '<br>';
-} elseif ($second_age >= 1 && $second_age <= 17) {
+} elseif ($second_age > 0 && $second_age < 18) {
     echo 'Вам ещё рано работать';
     echo '<br>';
 } else {
@@ -59,7 +59,6 @@ switch ($day) {
         break;
     default:
         echo 'Неизвестный день<br>';
-        break;
 }
 
 echo '<hr>';
@@ -88,9 +87,7 @@ $all_array = ['bmw' => $bmw, 'toyota' => $toyota, 'opel' => $opel];
 
 foreach ($all_array as $el => $item) {
     echo 'CAR ' . $el . '<br>';
-    foreach ($item as $key => $value) {
-        echo $value . ' ';
-    }
+    echo implode(' ', $item);
     echo '<br><br>';
 }
 
