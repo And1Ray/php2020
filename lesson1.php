@@ -18,21 +18,21 @@ const IMAGES = 80;
 const FELTTIP_PEN = 23;
 const PENCIL = 40;
 
-echo IMAGES - (FELTTIP_PEN + PENCIL);
+echo IMAGES - FELTTIP_PEN - PENCIL;
 echo '<br>';
 
 echo '<hr>';
 
 //#3
-$second_age = 18;
+$secondAge = 18;
 
-if ($second_age > 17 && $second_age < 66) {
+if ($secondAge > 17 && $secondAge < 66) {
     echo 'Вам еще работать и работать';
     echo '<br>';
-} elseif ($second_age > 65) {
+} elseif ($secondAge > 65) {
     echo 'Вам пора на пенсию';
     echo '<br>';
-} elseif ($second_age > 0 && $second_age < 18) {
+} elseif ($secondAge > 0 && $secondAge < 18) {
     echo 'Вам ещё рано работать';
     echo '<br>';
 } else {
@@ -91,30 +91,30 @@ foreach ($all_array as $el => $item) {
     echo '<br><br>';
 }
 
-echo '<hr>';
+echo '<hr>'; ?>
 
-echo '<table cellspacing="0" cellpadding="0" style="border-collapse: collapse;">';
-for ($i = 1; $i <= 10; $i++) {
-    echo '<tr>';
-    for ($j = 1; $j <= 10; $j++) {
 
-        if ($i == 1 || $j == 1) {
-            $var = $i * $j;
-            if ($var % 2 == 0) {
-                echo '<td align="center" style="border: 1px solid black;width: 30px;height: 30px;">
-                  ('. $var .')
-                </td>';
-            } else {
-                echo '<td align="center" style="border: 1px solid black;width: 30px;height: 30px;">
-                  ['. $var .']
-              </td>';
-            }
-        } else {
-            echo '<td align="center" style="border: 1px solid black;width: 30px;height: 30px;">
-                  '. $i * $j .'
-            </td>';
-        }
-    }
-    echo '</tr>';
-}
-echo '</table>';
+<table cellspacing="0" cellpadding="0" style="border-collapse: collapse;">
+    <?php for ($i = 1; $i <= 10; $i++) { ?>
+        <tr>
+            <?php for ($j = 1; $j <= 10; $j++) {
+                if ($i == 1 || $j == 1) {
+                    $var = $i * $j;
+                    if ($var % 2 == 0) { ?>
+                        <td align="center" style="border: 1px solid black;width: 30px;height: 30px;">
+                            (<?= $var ?>)
+                        </td>
+                    <?php } else { ?>
+                        <td align="center" style="border: 1px solid black;width: 30px;height: 30px;">
+                            [<?= $var ?>]
+                        </td>
+                    <?php }
+                } else { ?>
+                    <td align="center" style="border: 1px solid black;width: 30px;height: 30px;">
+                        <?= $i * $j ?>
+                    </td>
+                <?php }
+            } ?>
+        </tr>
+    <?php } ?>
+</table>
